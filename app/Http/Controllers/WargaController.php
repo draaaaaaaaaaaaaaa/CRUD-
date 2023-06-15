@@ -53,9 +53,10 @@ class WargaController extends Controller
      * @param  \App\Models\Warga  $warga
      * @return \Illuminate\Http\Response
      */
-    public function show(Warga $warga)
+    public function show($id)
     {
-        //
+        $warga = Warga::find($id);
+        return view('detail', compact('warga'));
     }
 
     /**

@@ -44,7 +44,7 @@
                                 <td>{{ $data->age }}</td>
                                 <td>{{ $data->address }}</td>
                                 <td class="d-flex justify-content-center gap-2">
-                                    <a  class="btn btn-success" type="submit">Detail</a>
+                                    <a  href="{{ route('warga.show', $data->id) }}" class="btn btn-success" type="submit">Detail</a>
                                     <form action="{{route('warga.destroy', $data->id)}}" method="post">
                                         @csrf
                                         {{ method_field('delete') }}
