@@ -15,13 +15,13 @@ class CreateWargaTable extends Migration
     {
         Schema::create('warga', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->integer('photo');
+            $table->string('photo');
             $table->string('name') -> unique();
             $table->integer('age');
             $table->text('address');
+            $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

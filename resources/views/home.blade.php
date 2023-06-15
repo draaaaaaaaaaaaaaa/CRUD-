@@ -43,9 +43,13 @@
                                 <td>{{ $data->name }}</td>
                                 <td>{{ $data->age }}</td>
                                 <td>{{ $data->address }}</td>
-                                <td>
-                                    <a class="btn btn-success">Detail</a>
-                                    <a class="btn btn-danger">Delete</a>
+                                <td class="d-flex justify-content-center gap-2">
+                                    <a  class="btn btn-success" type="submit">Detail</a>
+                                    <form action="{{route('warga.destroy', $data->id)}}" method="post">
+                                        @csrf
+                                        {{ method_field('delete') }}
+                                        <button type="submit" class="btn btn-danger">delete</button>
+                                    </form>
                                     <a class="btn btn-info text-white">Edit</a>
 
                                 </td>

@@ -44,7 +44,7 @@ class WargaController extends Controller
             $warga->save();
         }
 
-        return redirect()->route('home');
+        return redirect('/warga');
     }
 
     /**
@@ -87,8 +87,10 @@ class WargaController extends Controller
      * @param  \App\Models\Warga  $warga
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Warga $warga)
+    public function destroy($id)
     {
-        //
+        $warga = Warga::find($id);
+       $warga -> delete();
+       return back();
     }
 }
